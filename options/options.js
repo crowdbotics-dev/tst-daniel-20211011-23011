@@ -8,7 +8,7 @@ export const globalOptions = {
 
 export const modulesOptions = {
   "@modules/app-menu": {
-    title: "Aapp Menu",
+    title: "Aaapp Menu",
     copy: "Routes available!",
     styles: styles
   }
