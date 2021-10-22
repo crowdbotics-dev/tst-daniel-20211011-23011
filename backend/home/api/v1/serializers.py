@@ -1,5 +1,5 @@
 from django.contrib.auth import get_user_model
-from home.models import Car
+from home.models import Car, Stand
 from django.http import HttpRequest
 from django.utils.translation import ugettext_lazy as _
 from allauth.account import app_settings as allauth_settings
@@ -79,4 +79,10 @@ class PasswordSerializer(PasswordResetSerializer):
 class CarSerializer(serializers.ModelSerializer):
     class Meta:
         model = Car
+        fields = "__all__"
+
+
+class StandSerializer(serializers.ModelSerializer):
+    class Meta:
+        model = Stand
         fields = "__all__"

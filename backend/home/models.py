@@ -7,8 +7,13 @@ class Car(models.Model):
     num = models.BigIntegerField()
     user = models.ForeignKey(
         "users.User",
-        on_delete=models.CASCADE,
         null=True,
         blank=True,
+        on_delete=models.CASCADE,
         related_name="car_user",
     )
+
+
+class Stand(models.Model):
+    "Generated Model"
+    num = models.BigIntegerField()

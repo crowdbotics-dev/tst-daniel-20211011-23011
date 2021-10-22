@@ -1,6 +1,6 @@
 from rest_framework import viewsets
-from home.models import Car
-from .serializers import CarSerializer
+from home.models import Car, Stand
+from .serializers import CarSerializer, StandSerializer
 from rest_framework import authentication
 from rest_framework.authtoken.serializers import AuthTokenSerializer
 from rest_framework.viewsets import ModelViewSet, ViewSet
@@ -41,3 +41,12 @@ class CarViewSet(viewsets.ModelViewSet):
         authentication.TokenAuthentication,
     )
     queryset = Car.objects.all()
+
+
+class StandViewSet(viewsets.ModelViewSet):
+    serializer_class = StandSerializer
+    authentication_classes = (
+        authentication.SessionAuthentication,
+        authentication.TokenAuthentication,
+    )
+    queryset = Stand.objects.all()
